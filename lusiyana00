@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Coba GET</title>
+    <!--Menggunakan font-awesome biar tombol cari bisa lebih keren-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!--action kosong berarti mengirim ke diri sendiri-->
+    <form method="GET" action="">
+      Cari: <input type="text" name="katakunci"/>
+      Harga Min <input type="number" name="min" />
+      Harga Max <input type="number" name="max"/>
+      <button name="cari"><i class="fa fa-search"></i></button>
+    </form>
+    <hr />
+    Data yang terkirim: <pre><?php print_r($_GET);?></pre>
+  </body>
+</html>
