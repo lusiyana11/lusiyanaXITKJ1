@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Coba Form</title>
+    <style>
+      table{background: #FB7;}
+      table td{padding: 2px; margin: 2px; background: #FFC;}
+      table tr:nth-child(odd) td {background: #FFA;}
+    </style>
+  </head>
+  <body>
+    <!--action kosong berarti mengirim ke diri sendiri-->
+    <form method="POST" action="">
+      <table>
+        <tr>
+          <td>Nama</td>
+          <td><input type="text" name="nama" /></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+          <td>E-mail</td>
+          <td><input type="email" name="email" required /></td>
+        </tr>
+        <tr>
+          <td>Website</td>
+          <td><input type="url" name="web" required /></td>
+        </tr>
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td><input type="radio" name="kelamin" value="Laki-laki"/>Laki-laki <input type="radio" name="kelamin" value="Perempuan" />Perempuan</td>
+        </tr>
+        <tr>
+          <td>Umur</td>
+          <td><input type="number" name="umur"/></td>
+        </tr>
+        <tr>
+          <td>Tanggal Lahir</td>
+          <td><input type="date" name="lahir"/></td>
+        </tr>
+        <tr>
+          <td>Hobi</td>
+          <td>
+            <input type="checkbox" name="hobi[]" value="Gaming"/>Main game<br />
+            <input type="checkbox" name="hobi[]" value="Movies" />Nonton<br />
+            <input type="checkbox" name="hobi[]" value="Cooking" />Memasak<br />
+            <input type="checkbox" name="hobi[]" value="Gardening" />Berkebun<br />
+            <input type="checkbox" name="hobi[]" value="Writing" />Menulis<br />
+          </td>
+        </tr>
+        <tr>
+          <td>Warna kesukaan</td>
+          <td><input type="color" name="warna" /></td>
+        </tr>
+        <tr>
+          <td>Golongan</td>
+          <td>
+            <select name="golongan">
+              <option value="">--Golongan--</option>
+              <option value="mahasiswa">Mahasiswa</option>
+              <option value="dosen">Dosen</option>
+              <option value="staff">Staff / Karyawan</option>
+              <option value="umum">Umum</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Lomba yang diikuti:</td>
+          <td>Boleh pilih lebih dari satu<br />
+            <select name="lomba[]" multiple>
+              <option value="kerupuk">Makan kerupuk</option>
+              <option value="pinang">Panjat pinang</option>
+              <option value="catur">Catur</option>
+              <option value="karung">Balap Karung</option>
+              <option value="kelereng">Sendok Kelereng</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Penjelasan lebih lanjut mengenai diri Anda:<br />
+            <textarea name="keterangan"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><button name="kirim">Daftar</button></td>
+        </tr>
+      </table>
+      <input type="hidden" name="tersembunyi" value="Kode sesi: ABC DEF XYZ 123 789"/>
+    </form>
+    <hr />
+    Data yang terkirim: <pre><?php print_r($_POST);?></pre>
+  </body>
+</html>
